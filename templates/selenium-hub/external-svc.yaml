@@ -1,0 +1,14 @@
+{{- $root := . -}}
+{{- range .Values.externalNames }}
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ $root.Chart.Name }}-hub
+  namespace: {{ . }}
+spec:
+  type: ExternalName
+  externalName: {{ $root.Chart.Name }}-hub.{{ $root.Release.Namespace }}.svc.cluster.local
+  ports:
+  - port: 4444
+---
+{{- end }}

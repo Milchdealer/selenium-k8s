@@ -1,0 +1,37 @@
+# Default values for selenium-scraper.
+
+images:
+  seleniumHub:
+    repository: selenium/hub
+    tag: "3.141"
+    pullPolicy: IfNotPresent
+  nodes:
+    firefox:
+      repository: selenium/node-firefox-debug
+      tag: "3.141"
+      pullPolicy: IfNotPresent
+      replicas: 1
+    chrome:
+      repository: selenium/node-chrome-debug
+      tag: "3.141"
+      pullPolicy: IfNotPresent
+      replicas: 1
+
+externalNames: 
+  - default
+  # - <namespace-b>
+
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
