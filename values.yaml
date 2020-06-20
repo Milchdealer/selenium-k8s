@@ -17,8 +17,8 @@ images:
       pullPolicy: IfNotPresent
       replicas: 1
 
-externalNames: 
-  - default
+externalNames: []
+  # - default
   # - <namespace-b>
 
 
